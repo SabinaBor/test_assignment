@@ -1,0 +1,19 @@
+:root {
+    --parentColor: #ffffff;
+    --parentColorHover: #fbfcff;
+    --firstChildColor: #e4edfc;
+    --secondChildColor: #c5dcfe;
+    --thirdChildColor: #9dc4ff;
+    --textColor: #dadde0;
+    --tableTextColor: #727e8e;
+    --backgroundColor: #2d3e50;
+    --buttonColor: #f1f1f1;
+}
+
+.button {
+    background-color: var(--buttonColor);
+}
+
+p {
+    margin-left: 3%;
+}
