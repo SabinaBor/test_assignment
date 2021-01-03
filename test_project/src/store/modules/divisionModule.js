@@ -5,7 +5,16 @@ const state = {
 };
 
 const getters = {
-    divList: state => state.divisions
+    divList: state => state.divisions,
+    currentArray(state, name) {
+        for (let division of state.divisions){
+            if(division.name === name){
+                return state.divisions
+            } else {
+                return this.currentArray(division, name)
+            }
+        }
+    }
 };
 
 const actions = {
@@ -31,8 +40,8 @@ const mutations = {
     ),
     addNewDivision: (state, division) => state.divisions.unshift(division),
     removeDivision: (state, id) => (
-        state.divisions = state.divisions.filter(division => division.id !== id)
-        // state.divisions.splice(division => division.name, 1)
+        state.divisions.filter(division => division.id !== id),
+        state.divisions.splice(division => division.id, 1)
     )
 };
 

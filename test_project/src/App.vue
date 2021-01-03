@@ -4,12 +4,14 @@
     <AddContentForm />
     <table class="data-table">
       <tr class="data-table_header">
-        <th/>
-        <th><p>Общее количество</p></th>
-        <th><p>Фактическое количество</p></th>
-        <th><p>Действия</p></th>
+        <th style="width: 45%"/>
+        <th style="width: 20%"><p>Общее количество</p></th>
+        <th style="width: 25%"><p>Фактическое количество</p></th>
+        <th style="width: 10%"><p>Действия</p></th>
       </tr>
+      <td colspan="4">
       <DataTable :node="divList"/>
+      </td>
     </table>
   </div>
 </template>

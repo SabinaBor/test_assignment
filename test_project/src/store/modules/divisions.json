@@ -6,18 +6,18 @@
       "count": 100,
       "children": [
         {
-          "id": 1,
+          "id": 11,
           "name": "Управление 1",
           "count": 50,
           "children": [
             {
-              "id": 1,
+              "id": 111,
               "name": "Отдел 1",
               "count": 25,
               "children": []
             },
             {
-              "id": 2,
+              "id": 112,
               "name": "Отдел 2",
               "count": 25,
               "children": []
@@ -25,18 +25,18 @@
           ]
         },
         {
-          "id": 2,
+          "id": 12,
           "name": "Управление 2",
           "count": 50,
           "children": [
             {
-              "id": 1,
+              "id": 121,
               "name": "Отдел 1",
               "count": 25,
               "children": []
             },
             {
-              "id": 2,
+              "id": 122,
               "name": "Отдел 2",
               "count": 25,
               "children": []
@@ -51,18 +51,18 @@
       "count": 100,
       "children": [
         {
-          "id": 1,
+          "id": 21,
           "name": "Управление 1",
           "count": 50,
           "children": [
             {
-              "id": 1,
+              "id": 211,
               "name": "Отдел 1",
               "count": 25,
               "children": []
             },
             {
-              "id": 2,
+              "id": 212,
               "name": "Отдел 2",
               "count": 25,
               "children": []
@@ -70,18 +70,18 @@
           ]
         },
         {
-          "id": 2,
+          "id": 22,
           "name": "Управление 2",
           "count": 50,
           "children": [
             {
-              "id": 1,
+              "id": 221,
               "name": "Отдел 1",
               "count": 25,
               "children": []
             },
             {
-              "id": 2,
+              "id": 222,
               "name": "Отдел 2",
               "count": 25,
               "children": []
@@ -96,18 +96,18 @@
       "count": 100,
       "children": [
         {
-          "id": 1,
+          "id": 31,
           "name": "Управление 1",
           "count": 50,
           "children": [
             {
-              "id": 1,
+              "id": 311,
               "name": "Отдел 1",
               "count": 25,
               "children": []
             },
             {
-              "id": 2,
+              "id": 312,
               "name": "Отдел 2",
               "count": 25,
               "children": []
@@ -115,18 +115,18 @@
           ]
         },
         {
-          "id": 2,
+          "id": 32,
           "name": "Управление 2",
           "count": 50,
           "children": [
             {
-              "id": 1,
+              "id": 321,
               "name": "Отдел 1",
               "count": 25,
               "children": []
             },
             {
-              "id": 2,
+              "id": 322,
               "name": "Отдел 2",
               "count": 25,
               "children": []
