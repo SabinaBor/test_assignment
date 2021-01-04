@@ -3,23 +3,29 @@
     {
       "id": 1,
       "name": "Тараз",
-      "count": 100,
+      "factCount": 20,
       "children": [
         {
           "id": 11,
           "name": "Управление 1",
-          "count": 50,
+          "factCount": 10,
           "children": [
             {
               "id": 111,
               "name": "Отдел 1",
-              "count": 25,
+              "factCount": 25,
               "children": []
             },
             {
               "id": 112,
               "name": "Отдел 2",
-              "count": 25,
+              "factCount": 25,
+              "children": []
+            },
+            {
+              "id": 113,
+              "name": "Отдел 3",
+              "factCount": 10,
               "children": []
             }
           ]
@@ -27,18 +33,18 @@
         {
           "id": 12,
           "name": "Управление 2",
-          "count": 50,
+          "factCount": 10,
           "children": [
             {
               "id": 121,
               "name": "Отдел 1",
-              "count": 25,
+              "factCount": 25,
               "children": []
             },
             {
               "id": 122,
               "name": "Отдел 2",
-              "count": 25,
+              "factCount": 25,
               "children": []
             }
           ]
@@ -48,23 +54,23 @@
     {
       "id": 2,
       "name": "Уральск",
-      "count": 100,
+      "factCount": 10,
       "children": [
         {
           "id": 21,
           "name": "Управление 1",
-          "count": 50,
+          "factCount": 5,
           "children": [
             {
               "id": 211,
               "name": "Отдел 1",
-              "count": 25,
+              "factCount": 10,
               "children": []
             },
             {
               "id": 212,
               "name": "Отдел 2",
-              "count": 25,
+              "factCount": 10,
               "children": []
             }
           ]
@@ -72,44 +78,50 @@
         {
           "id": 22,
           "name": "Управление 2",
-          "count": 50,
+          "factCount": 5,
           "children": [
             {
               "id": 221,
               "name": "Отдел 1",
-              "count": 25,
+              "factCount": 10,
               "children": []
             },
             {
               "id": 222,
               "name": "Отдел 2",
-              "count": 25,
+              "factCount": 10,
               "children": []
             }
           ]
+        },
+        {
+          "id": 23,
+          "name": "Какое-то",
+          "factCount": 30,
+          "children": []
         }
       ]
     },
     {
       "id": 3,
       "name": "Петропавловск",
-      "count": 100,
+      "factCount": 0,
       "children": [
         {
           "id": 31,
           "name": "Управление 1",
-          "count": 50,
+          "factCount": 10,
           "children": [
             {
               "id": 311,
               "name": "Отдел 1",
-              "count": 25,
+              "factCount": 20,
               "children": []
             },
             {
               "id": 312,
               "name": "Отдел 2",
-              "count": 25,
+              "factCount": 20,
               "children": []
             }
           ]
@@ -117,18 +129,31 @@
         {
           "id": 32,
           "name": "Управление 2",
-          "count": 50,
+          "factCount": 10,
           "children": [
             {
               "id": 321,
               "name": "Отдел 1",
-              "count": 25,
+              "factCount": 20,
               "children": []
             },
             {
               "id": 322,
               "name": "Отдел 2",
-              "count": 25,
+              "factCount": 20,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 33,
+          "name": "Управление 3",
+          "factCount": 0,
+          "children": [
+            {
+              "id": 331,
+              "name": "Отдел 1",
+              "factCount": 35,
               "children": []
             }
           ]

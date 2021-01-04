@@ -6,7 +6,7 @@
     >
     <tr
         class="data-table_content"
-        :style="getStyle(division)"
+        :style="getStyle()"
     >
       <td
           class="data-table_content_name"
@@ -21,10 +21,10 @@
         {{ division.name }}
       </td>
       <td class="data-table_content_count">
-        {{ division.count }}
+        {{countAmount(division)}}
       </td>
       <td class="data-table_content_factCount">
-        {{ division.count - 10 }}
+        {{ division.factCount }}
       </td>
       <td class="data-table_icons">
         <i
@@ -33,7 +33,7 @@
         />
         <i
             class="data-table_icon fas fa-times-circle"
-            @click="deleteDivision(division.id)"
+            @click="deleteObject(division.id)"
         />
       </td>
     </tr>
@@ -78,7 +78,28 @@ export default {
     EditObject
   },
   methods: {
-    ...mapActions(["deleteDivision"]),
+    ...mapActions(["deleteDivision", "updateDivision"]),
+    deleteObject(id){
+      var res = confirm("Вы уверены, что хотите удалить этот объект?");
+      if(res){
+        this.deleteDivision(id);
+        location.reload()
+      } else {
+       return;
+      }
+    },
+    countAmount(division){
+      let sum = 0;
+      for (let child of division.children){
+        if (child.children !== []){
+          sum += this.countAmount(child);
+        } else {
+          sum += parseInt(child.factCount);
+        }
+      }
+      sum += parseInt(division.factCount);
+      return sum;
+    },
     // При расширении элемента списка, присваиваем к expanded значение id элемента,
     // который был раскрыт. Это нужно для того, чтобы все элементы одного цикла
     // не раскрылись одновременно. Проверка с count нужна для того, чтобы
@@ -97,12 +118,12 @@ export default {
     // Распределение цветов, чем глубже элемент, тем темнее цвет
     // @param {Object} obj - объект, который может быть либо родителем,
     // либо дочерним элементом, и т д
-    getStyle(obj) {
-      if (obj.name.startsWith('Управление')) {
+    getStyle() {
+      if (this.depth === 1) {
         return {
           'background-color': 'var(--firstChildColor)',
         }
-      } else if (obj.name.startsWith('Отдел')) {
+      } else if (this.depth === 2) {
         return {
           'background-color': 'var(--secondChildColor)',
         }

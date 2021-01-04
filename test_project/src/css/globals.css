@@ -10,12 +10,89 @@
     --buttonColor: #f1f1f1;
 }
 
-.button {
-    background-color: var(--buttonColor);
-}
-
 p {
     margin-left: 3%;
+}
+
+input {
+    border: 0;
+    border-bottom: 1px solid dimgray;
+    width: 50%;
+}
+
+/* AddContentForm component */
+button {
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+    height: 3em;
+    border: 0;
+    border-radius: 5%;
+    width: 8em;
+    font-weight: bold;
+}
+
+.add-object-form_button {
+    background-color: var(--buttonColor);
+    color: #8c8c8c;
+    font-weight: normal;
+}
+
+.add-object-form {
+    height: 5em;
+    display: flex;
+    align-items: center;
+    margin-left: 2%;
+}
+
+.add-object-form_modal {
+    position: fixed; /* Модальное окно по центру */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Затемняет всё позади модального окна */
+}
+
+.add-object-form_modal-content_btn-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-object-form_modal-content {
+    padding: 20px;
+    border: 1px solid #888;
+    margin: 15% auto;
+    width: 40%;
+    background-color: white;
+}
+
+.add-object-form_modal-content_add-department-control-form_btn-group {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 5%;
+}
+
+/* Настройка изображения для просмотра на телефоне */
+@media screen and (max-width: 600px) {
+    .add-object-form_modal-content_add-department-control-form_btn-group {
+        display: grid;
+        margin-left: 20%;
+    }
+
+    button {
+        margin-bottom: 1%;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    * {
+        font-size: x-small;
+    }
 }
 
 .close {

@@ -2,8 +2,11 @@
   <div class="edit-modal" id="editModal">
     <form class="edit-modal_form" @submit.prevent="onSubmit">
       <span class="close" @click="func" id="closeComponent">&times;</span>
+      <h3>Редактировать объект</h3>
+      <br>
       <input type="text" v-model="division.name" placeholder="Название" required>
-      <input type="number" v-model="division.count" placeholder="Фактическое количество" required>
+      <input type="number" v-model="division.factCount" placeholder="Фактическое количество" required>
+      <br><br>
       <button type="submit">Редактировать</button>
     </form>
   </div>
@@ -21,7 +24,7 @@ export default {
   data () {
     return {
       name: "",
-      count: ""
+      factCount: ""
     }
   },
   computed: {
@@ -43,6 +46,7 @@ export default {
 
 .edit-modal {
   position: fixed;
+  align-content: center;
   left: 0;
   top: 0;
   width: 100%;
@@ -54,7 +58,7 @@ export default {
   padding: 20px;
   border: 1px solid #888;
   margin: 15% auto;
-  width: 50%;
+  width: 30%;
   background-color: white;
 }
 

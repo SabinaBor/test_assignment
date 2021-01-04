@@ -24,13 +24,7 @@ const actions = {
         const response = await axios.post("http://localhost:3000/divisions", division);
         commit("addNewDivision", response.data)
     },
-    async addChildren({commit}, divChild, id){
-        console.log(this.state.divChildren);
-        const response = await axios.post("http://localhost:3000/divisions/" + id,divChild);
-        commit("addNewDivChild", response.data)
-    },
     async deleteDivision({commit}, id){
-        console.log(id);
         await axios.delete(`http://localhost:3000/divisions/${id}`);
         commit("removeDivision", id);
     },
@@ -47,11 +41,10 @@ const mutations = {
     setDivChildren: (state, divisions) => (
         state.divChildren = divisions[0].children
     ),
-    addNewDivChild: (state, divChild) => state.divChildren.unshift(divChild),
     addNewDivision: (state, division) => state.divisions.unshift(division),
     removeDivision: (state, id) => (
         state.divisions.filter(division => division.id !== id),
-        state.divisions.splice(division => division.id, 1)
+        state.divisions.splice(div => div.id, 1)
     ),
     setNewFeaturesDivision(state, division) {
         // eslint-disable-next-line no-unused-vars

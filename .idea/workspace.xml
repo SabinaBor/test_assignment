@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4101f665-c101-4d7d-8440-94db2f217877" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test_project/src/components/EditObject.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_project/src/components/AddForm.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_project/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/test_project/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_project/src/components/AddContentForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/test_project/src/components/AddContentForm.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_project/src/components/DataTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/test_project/src/components/DataTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_project/src/components/EditObject.vue" beforeDir="false" afterPath="$PROJECT_DIR$/test_project/src/components/EditObject.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_project/src/css/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/test_project/src/css/globals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_project/src/store/modules/divisionModule.js" beforeDir="false" afterPath="$PROJECT_DIR$/test_project/src/store/modules/divisionModule.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_project/src/store/modules/divisions.json" beforeDir="false" afterPath="$PROJECT_DIR$/test_project/src/store/modules/divisions.json" afterDir="false" />
@@ -58,7 +58,7 @@
       <option name="presentableId" value="Default" />
       <updated>1609493866139</updated>
       <workItem from="1609493875959" duration="51293000" />
-      <workItem from="1609730254337" duration="15471000" />
+      <workItem from="1609730254337" duration="31450000" />
     </task>
     <servers />
   </component>
