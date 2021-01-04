@@ -4,17 +4,19 @@
         v-for="division in node"
         :key="division.id"
     >
-    <tr :style="getStyle(division)" class="data-table_content">
+    <tr
+        class="data-table_content"
+        :style="getStyle(division)"
+    >
       <td
-          :style="getNamesMargined()"
           class="data-table_content_name"
+          :style="getNamesMargined()"
       >
         <span
             v-if="division.children.length > 0"
-            class="type"
-            @click="nodeClicked"
+            @click="nodeClicked(division.id)"
         >
-          {{ expanded ? '&#9660;' : '&#9658;' }}
+          {{ expanded === division.id ? '&#9660;' : '&#9658;' }}
         </span>
         {{ division.name }}
       </td>
@@ -25,14 +27,25 @@
         {{ division.count - 10 }}
       </td>
       <td class="data-table_icons">
-        <i class="data-table_icon fas fa-pen"></i>
+        <i
+            class="data-table_icon fas fa-pen"
+            @click="openEditModal(division.id)"
+        />
         <i
             class="data-table_icon fas fa-times-circle"
-            @click="deleteDivision(division.id)"></i>
+            @click="deleteDivision(division.id)"
+        />
       </td>
     </tr>
+    <EditObject
+        v-if="openedModal === division.id"
+        :id = "division.id"
+        :func="closeModal"
+    />
+<!--Рекурсивно вызывает Vue компонент DataTable уже с children nodes.
+    Инкрементируем depth, для сдвига (margin) children, grandchildren влево-->
     <DataTable
-        v-if="expanded"
+        v-if="expanded === division.id"
         :node="division.children"
         :depth="depth + 1"
     />
@@ -41,11 +54,12 @@
 </template>
 
 <script>
-
-import {mapActions, mapGetters} from "vuex";
+import {mapActions} from "vuex";
+import EditObject from "@/components/EditObject";
 
 export default {
   name: "DataTable",
+  // Значения, принимающиеся при вызове компонента DataTable
   props: {
     node: Array,
     depth: {
@@ -55,20 +69,40 @@ export default {
   },
   data() {
     return {
-      expanded: false,
+      expanded: "",
+      openedModal: "",
+      count: 0
     }
+  },
+  components: {
+    EditObject
   },
   methods: {
     ...mapActions(["deleteDivision"]),
-    nodeClicked() {
-      this.expanded = !this.expanded;
+    // При расширении элемента списка, присваиваем к expanded значение id элемента,
+    // который был раскрыт. Это нужно для того, чтобы все элементы одного цикла
+    // не раскрылись одновременно. Проверка с count нужна для того, чтобы
+    // была возможность непрерывно закрывать и раскрывать элементы списка.
+    // Без этого есть возможность раскрыть элемент, но не закрыть его.
+    // @param {number} id - id элемента, который раскрывается
+    nodeClicked(id) {
+      this.count += 1;
+      if(this.count === 1){
+        this.expanded = id;
+      } else if(this.count === 2){
+        this.count = 0;
+        this.expanded = "";
+      }
     },
-    getStyle(division) {
-      if (division.name.startsWith('Управление')) {
+    // Распределение цветов, чем глубже элемент, тем темнее цвет
+    // @param {Object} obj - объект, который может быть либо родителем,
+    // либо дочерним элементом, и т д
+    getStyle(obj) {
+      if (obj.name.startsWith('Управление')) {
         return {
           'background-color': 'var(--firstChildColor)',
         }
-      } else if (division.name.startsWith('Отдел')) {
+      } else if (obj.name.startsWith('Отдел')) {
         return {
           'background-color': 'var(--secondChildColor)',
         }
@@ -78,6 +112,7 @@ export default {
         }
       }
     },
+    // Чем глубже объект, тем более он смещается направо
     getNamesMargined() {
       if (this.depth > 0) {
         return {
@@ -88,54 +123,20 @@ export default {
           'margin-left': '2%'
         }
       }
+    },
+    // Открывает модальное окно редактирования объекта
+    openEditModal(id){
+      this.openedModal = id;
+    },
+    // Закрывает модальное окно редактирования объекта
+    closeModal(){
+      this.openedModal = ""
     }
-  },
-  computed(){
-    mapGetters(["currentArray"])
-  },
+  }
 }
 </script>
 
 <style scoped>
-th {
-  background-color: var(--backgroundColor);
-}
-
-.data-table {
-  width: 100%;
-}
-
-.data-table_content {
-  display: inline-flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 3em;
-  border-bottom: 0 solid white;
-}
-
-.data-table_icon {
-  color: var(--backgroundColor);
-}
-
-.data-table_icons {
-  display: flex;
-  justify-content: space-around;
-  width: 10%;
-}
-
-.data-table_content_name {
-  width: 45%;
-}
-
-.data-table_content_count {
-  width: 20%;
-}
-
-.data-table_content_factCount {
-  width: 25%;
-}
-
 * {
   text-align: left;
   color: var(--tableTextColor);

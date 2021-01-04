@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <Header />
-    <AddContentForm />
+    <Header/>
+    <AddContentForm/>
     <table class="data-table">
       <tr class="data-table_header">
-        <th style="width: 45%"/>
-        <th style="width: 20%"><p>Общее количество</p></th>
-        <th style="width: 25%"><p>Фактическое количество</p></th>
-        <th style="width: 10%"><p>Действия</p></th>
+        <th class="data-table_content_name"/>
+        <th class="data-table_content_count">Общее количество</th>
+        <th class="data-table_content_factCount">Фактическое количество</th>
+        <th style="width: 10%">Действия</th>
       </tr>
+      <!--colspan = 4 позволяет соединить 4 ячейки в одной строке-->
       <td colspan="4">
-      <DataTable :node="divList"/>
+        <DataTable
+            :node="divList"
+        />
       </td>
     </table>
   </div>
@@ -31,7 +34,7 @@ export default {
   },
   computed: mapGetters(["divList"]),
   methods: {
-    ...mapActions(["fetchDivisions", "deleteDivision"]),
+    ...mapActions(["fetchDivisions"]),
   },
   created() {
     this.fetchDivisions()
@@ -54,38 +57,8 @@ export default {
   text-align: center;
   color: var(--textColor);
 }
+
 * {
   margin: 0;
-}
-
-th {
-  background-color: var(--backgroundColor);
-}
-
-.data-table {
-  width: 100%;
-}
-
-.data-table_content_parent {
-  background-color: var(--parentColor);
-  color: var(--tableTextColor);
-}
-
-.data-table_icon {
-  color: var(--backgroundColor);
-}
-
-.data-table_icons {
-  display: flex;
-  justify-content: space-around;
-  width: 30%;
-}
-
-.data-table_header {
-  height: 3em;
-}
-
-.data-table_content_parent_name {
-  width: 40%;
 }
 </style>
