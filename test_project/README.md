@@ -1,24 +1,28 @@
-# test_project
+# Тестовое задание для "Аврора холдинг"
 
-## Project setup
+## Настройка проекта:
+
+### Если требуется, то надо загрузить все необходимые зависимости:
+
 ```
 npm install
+npm install --save vuex
+npm install --save axios
+npm install --save -g json-server
 ```
 
-### Compiles and hot-reloads for development
+### Компилирует и перезагружает разработку, команда: 
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Компилирует и минимизирует для разработки, команда:
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### Запустить сервер: 
 ```
-npm run lint
+npm start
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
