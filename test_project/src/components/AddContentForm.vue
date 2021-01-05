@@ -18,7 +18,9 @@
         >
           &times;
         </span>
-        <h3>Добавить объект</h3>
+        <h3>
+          Добавить объект
+        </h3>
         <br>
         <div class="add-object-form_modal-content_btn-group">
           <button @click="openAddCityForm">
@@ -35,12 +37,12 @@
         >
           <br><br>
           <div class="add-object-form_modal-content_add-department-control-form_btn-group">
-          <button @click="openAddControlForm">
-            Управление
-          </button>
-          <button @click="openAddDepartmentForm">
-            Отдел
-          </button>
+            <button @click="openAddControlForm">
+              Управление
+            </button>
+            <button @click="openAddDepartmentForm">
+              Отдел
+            </button>
           </div>
           <select
               v-if="addControlOpened || addDepartmentOpened"
@@ -48,6 +50,7 @@
               id="selectDivisions"
               @change="getSelectedCity()"
           >
+            <option>Выберите город</option>
             <option
                 v-for="division in divList"
                 :key="division.id"
@@ -70,6 +73,7 @@
                 id="selectControls"
                 @change="getSelectedControl()"
             >
+              <option>Выберите управление</option>
               <option
                   v-for="divChild in divChildren"
                   :key="divChild.id"
@@ -140,14 +144,14 @@ export default {
       this.addCityOpened = false;
       this.addControlOpened = false;
     },
-    closeModal(){
+    closeModal() {
       this.modalOpened = false;
       this.addObjectOpened = false;
       this.addCityOpened = false;
       this.addControlOpened = false;
       this.addDepartmentOpened = false;
     },
-    // Get values for selected options
+    // Получить значения выбранных аттрибутов
     getSelectedCity() {
       this.id = document.getElementById('selectDivisions').value;
       this.fetchDivChildren(this.id);

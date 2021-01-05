@@ -43,9 +43,7 @@ const mutations = {
     ),
     addNewDivision: (state, division) => state.divisions.unshift(division),
     removeDivision: (state, id) => (
-        state.divisions.filter(division => division.id !== id),
-        state.divisions.splice(div => div.id, 1)
-    ),
+        state.divisions = state.divisions.filter(division => division.id !== id)),
     setNewFeaturesDivision(state, division) {
         // eslint-disable-next-line no-unused-vars
         let div = state.divisions.find(div => div.id === division.id)

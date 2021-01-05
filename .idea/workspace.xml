@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4101f665-c101-4d7d-8440-94db2f217877" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test_project/src/components/AddForm.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_project/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/test_project/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_project/src/components/AddContentForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/test_project/src/components/AddContentForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_project/src/components/AddForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/test_project/src/components/AddForm.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_project/src/components/DataTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/test_project/src/components/DataTable.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_project/src/components/EditObject.vue" beforeDir="false" afterPath="$PROJECT_DIR$/test_project/src/components/EditObject.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_project/src/css/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/test_project/src/css/globals.css" afterDir="false" />
@@ -49,6 +50,11 @@
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test_project" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -58,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1609493866139</updated>
       <workItem from="1609493875959" duration="51293000" />
-      <workItem from="1609730254337" duration="31450000" />
+      <workItem from="1609730254337" duration="39092000" />
     </task>
     <servers />
   </component>

@@ -1,13 +1,39 @@
 <template>
-  <div class="edit-modal" id="editModal">
-    <form class="edit-modal_form" @submit.prevent="onSubmit">
-      <span class="close" @click="func" id="closeComponent">&times;</span>
-      <h3>Редактировать объект</h3>
+  <div
+      class="edit-modal"
+      id="editModal"
+  >
+    <form
+        class="edit-modal_form"
+        @submit.prevent="onSubmit"
+    >
+      <span
+          class="close"
+          @click="func"
+          id="closeComponent">
+        &times;
+      </span>
+      <h3>
+        Редактировать объект
+      </h3>
       <br>
-      <input type="text" v-model="division.name" placeholder="Название" required>
-      <input type="number" v-model="division.factCount" placeholder="Фактическое количество" required>
+      <input
+          type="text"
+          v-model="name"
+          placeholder="Название"
+          required
+      >
+      <input
+          type="number"
+          min="0"
+          v-model="factCount"
+          placeholder="Фактическое количество"
+          required
+      >
       <br><br>
-      <button type="submit">Редактировать</button>
+      <button type="submit">
+        Редактировать
+      </button>
     </form>
   </div>
 </template>
@@ -19,9 +45,10 @@ export default {
   name: "EditObject",
   props: {
     id: Number,
-    func: Function
+    func: Function,
+    depth: Number
   },
-  data () {
+  data() {
     return {
       name: "",
       factCount: ""
@@ -29,37 +56,38 @@ export default {
   },
   computed: {
     ...mapGetters(["divList"]),
-    division(){
-      return this.divList.find(div => div.id === this.id);
+    // Получение нужного объекта
+    division() {
+      if (this.depth === 0) {
+        return this.divList.find(div => div.id === this.id);
+      } else if (this.depth === 1) {
+        let cityId = Math.round(this.id / 10); // Получить id города
+        return this.divList.find(div => div.id === cityId);
+      } else {
+        let cityId = Math.round(this.id / 100); // Получить id города
+        return this.divList.find(div => div.id === cityId);
+      }
     }
   },
   methods: {
     ...mapActions(["updateDivision"]),
-    async onSubmit(){
+    async onSubmit() {
+      if (this.depth === 0) {
+        this.division.name = this.name;
+        this.division.factCount = this.factCount;
+      } else if (this.depth === 1) {
+        this.division.children[this.id % 10 - 1].name = this.name;
+        this.division.children[this.id % 10 - 1].factCount = this.factCount;
+      } else {
+        let controlIndex = Math.round(this.id % 100 / 10) - 1;
+        this.division.children[controlIndex].children[this.id % 10 - 1].name = this.name;
+        this.division.children[controlIndex].children[this.id % 10 - 1].factCount = this.factCount;
+      }
+      this.name = "";
+      this.factCount = "";
+      this.func();
       await this.updateDivision(this.division);
     }
   }
 }
 </script>
-
-<style scoped>
-
-.edit-modal {
-  position: fixed;
-  align-content: center;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.4);
-}
-
-.edit-modal_form {
-  padding: 20px;
-  border: 1px solid #888;
-  margin: 15% auto;
-  width: 30%;
-  background-color: white;
-}
-
-</style>

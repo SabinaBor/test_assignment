@@ -14,6 +14,10 @@ p {
     margin-left: 3%;
 }
 
+.data-table_content_arrow {
+    cursor: pointer;
+}
+
 input {
     border: 0;
     border-bottom: 1px solid dimgray;
@@ -29,12 +33,27 @@ button {
     border-radius: 5%;
     width: 8em;
     font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #23303d;
+    transition: background-color 1s linear;
+}
+
+i {
+    cursor: pointer;
 }
 
 .add-object-form_button {
     background-color: var(--buttonColor);
     color: #8c8c8c;
     font-weight: normal;
+}
+
+.add-object-form_button:hover {
+    background-color: #c7c7c7;
+    transition: background-color 1s linear;
 }
 
 .add-object-form {
@@ -150,4 +169,23 @@ button {
 
 th {
     background-color: var(--backgroundColor);
+}
+
+/* EditObject component */
+.edit-modal {
+    position: fixed;
+    align-content: center;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.edit-modal_form {
+    padding: 20px;
+    border: 1px solid #888;
+    margin: 15% auto;
+    width: 30%;
+    background-color: white;
 }

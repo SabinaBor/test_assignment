@@ -1,11 +1,24 @@
 <template>
   <form v-show="smthOpened">
     <br><br>
-    <input type="text" v-model="name" placeholder="Название..." required/>
+    <input
+        type="text"
+        v-model="name"
+        placeholder="Название..."
+        required
+    />
     <br><br>
-    <input type="number" v-model="factCount" placeholder="Фактическое кол-во..." required>
+    <input
+        type="number"
+        min="0"
+        v-model="factCount"
+        placeholder="Фактическое кол-во..."
+        required
+    />
     <br><br>
-    <button @click="onDivSubmit">Добавить</button>
+    <button @click="onDivSubmit">
+      Добавить
+    </button>
   </form>
 </template>
 
@@ -35,6 +48,7 @@ export default {
         factCount: parseInt(this.factCount),
         children: []
       }
+      // Когда depth = 0 - это родитель, 1 - это вложенное подразделение, и т.д.
       if (this.depth === 0) {
         this.addDivisions(obj);
       } else if (this.depth === 1) {
@@ -49,13 +63,13 @@ export default {
         divDepartment.children.find(control => control.id === parseInt(this.controlId)).children.push(obj);
         this.updateDivision(divDepartment);
       }
-        this.name = "";
-        this.factCount = "";
-        location.reload();
+      this.name = "";
+      this.factCount = "";
+      location.reload();
     },
   },
   computed: {
-      ...mapGetters(["divList"])
+    ...mapGetters(["divList"])
   },
   created() {
     this.fetchDivisions();
