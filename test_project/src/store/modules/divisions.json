@@ -173,6 +173,24 @@
           ]
         }
       ]
+    },
+    {
+      "id": 5,
+      "name": "Алматы",
+      "factCount": 45,
+      "children": []
+    },
+    {
+      "id": 6,
+      "name": "Костанай",
+      "factCount": 24,
+      "children": []
+    },
+    {
+      "id": 7,
+      "name": "Караганда",
+      "factCount": 340,
+      "children": []
     }
   ]
 }

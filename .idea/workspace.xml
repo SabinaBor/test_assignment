@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="4101f665-c101-4d7d-8440-94db2f217877" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_project/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/test_project/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_project/src/components/AddContentForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/test_project/src/components/AddContentForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_project/src/components/AddForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/test_project/src/components/AddForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_project/src/store/modules/divisionModule.js" beforeDir="false" afterPath="$PROJECT_DIR$/test_project/src/store/modules/divisionModule.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_project/src/store/modules/divisions.json" beforeDir="false" afterPath="$PROJECT_DIR$/test_project/src/store/modules/divisions.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

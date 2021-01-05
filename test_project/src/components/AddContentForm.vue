@@ -30,7 +30,10 @@
             Объект
           </button>
         </div>
-        <add-form :smth-opened="addCityOpened" :depth="0"/>
+        <add-form
+            :smth-opened="addCityOpened"
+            :depth="0"
+            :func="closeModal"/>
         <div
             class="add-object-form_modal-content_add-department-control-form"
             v-show="addObjectOpened"
@@ -63,6 +66,7 @@
               :smth-opened="addControlOpened"
               :depth="1"
               :city-id="id"
+              :func="closeModal"
           />
           <form
               class="form_add-department"
@@ -87,6 +91,7 @@
                 :depth="2"
                 :city-id="id"
                 :control-id="controlId"
+                :func="closeModal"
             />
           </form>
         </div>
