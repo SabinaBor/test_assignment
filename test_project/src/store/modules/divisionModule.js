@@ -41,7 +41,7 @@ const mutations = {
     setDivChildren: (state, divisions) => (
         state.divChildren = divisions[0].children
     ),
-    addNewDivision: (state, division) => state.divisions.unshift(division),
+    addNewDivision: (state, division) => state.divisions.push(division),
     removeDivision: (state, id) => (
         state.divisions = state.divisions.filter(division => division.id !== id)),
     setNewFeaturesDivision(state, division) {

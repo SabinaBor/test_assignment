@@ -31,7 +31,8 @@ export default {
     smthOpened: Boolean,
     depth: Number,
     cityId: String,
-    controlId: String
+    controlId: String,
+    func: Function,
   },
   data() {
     return {
@@ -65,7 +66,7 @@ export default {
       }
       this.name = "";
       this.factCount = "";
-      location.reload();
+      this.func();
     },
   },
   computed: {
