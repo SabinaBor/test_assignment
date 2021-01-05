@@ -1,0 +1,191 @@
+:root {
+    --parentColor: #ffffff;
+    --parentColorHover: #fbfcff;
+    --firstChildColor: #e4edfc;
+    --secondChildColor: #c5dcfe;
+    --thirdChildColor: #9dc4ff;
+    --textColor: #dadde0;
+    --tableTextColor: #727e8e;
+    --backgroundColor: #2d3e50;
+    --buttonColor: #f1f1f1;
+}
+
+p {
+    margin-left: 3%;
+}
+
+.data-table_content_arrow {
+    cursor: pointer;
+}
+
+input {
+    border: 0;
+    border-bottom: 1px solid dimgray;
+    width: 50%;
+}
+
+/* AddContentForm component */
+button {
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+    height: 3em;
+    border: 0;
+    border-radius: 5%;
+    width: 8em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #23303d;
+    transition: background-color 1s linear;
+}
+
+i {
+    cursor: pointer;
+}
+
+.add-object-form_button {
+    background-color: var(--buttonColor);
+    color: #8c8c8c;
+    font-weight: normal;
+}
+
+.add-object-form_button:hover {
+    background-color: #c7c7c7;
+    transition: background-color 1s linear;
+}
+
+.add-object-form {
+    height: 5em;
+    display: flex;
+    align-items: center;
+    margin-left: 2%;
+}
+
+.add-object-form_modal {
+    position: fixed; /* Модальное окно по центру */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Затемняет всё позади модального окна */
+}
+
+.add-object-form_modal-content_btn-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-object-form_modal-content {
+    padding: 20px;
+    border: 1px solid #888;
+    margin: 15% auto;
+    width: 40%;
+    background-color: white;
+}
+
+.add-object-form_modal-content_add-department-control-form_btn-group {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 5%;
+}
+
+/* Настройка изображения для просмотра на телефоне */
+@media screen and (max-width: 600px) {
+    .add-object-form_modal-content_add-department-control-form_btn-group {
+        display: grid;
+        margin-left: 20%;
+    }
+
+    button {
+        margin-bottom: 1%;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    * {
+        font-size: x-small;
+    }
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    cursor: pointer;
+}
+
+/* DataTable component */
+.data-table {
+    width: 100%;
+}
+
+.data-table_header {
+    height: 3em;
+}
+
+.data-table_content {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 3em;
+    border-bottom: 0 solid white;
+}
+
+.data-table_icon {
+    color: var(--backgroundColor);
+}
+
+.data-table_icons {
+    display: flex;
+    justify-content: space-around;
+    width: 10%;
+}
+
+.data-table_content_name {
+    width: 45%;
+}
+
+.data-table_content_count {
+    width: 20%;
+}
+
+.data-table_content_factCount {
+    width: 25%;
+}
+
+th {
+    background-color: var(--backgroundColor);
+}
+
+/* EditObject component */
+.edit-modal {
+    position: fixed;
+    align-content: center;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.edit-modal_form {
+    padding: 20px;
+    border: 1px solid #888;
+    margin: 15% auto;
+    width: 30%;
+    background-color: white;
+}
